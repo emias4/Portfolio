@@ -15,35 +15,101 @@
     <link rel="stylesheet" href="style.css" type="text/css" />
     <link rel="stylesheet" href="css/fontello.css" type="text/css" />
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital@1&display=swap" rel="stylesheet">
+    <title>Zegarek w JavaScript</title>
+    <script>
+        function zegarek() {
+            var data = new Date();
+            var godzina = data.getHours();
+            var minuta = data.getMinutes();
+            var sekunda = data.getSeconds();
+            var dzien = data.getDate();
+            var dzienN = data.getDay();
+            var miesiac = data.getMonth();
+            var rok = data.getFullYear();
+
+            if (minuta < 10) minuta = "0" + minuta;
+            if (sekunda < 10) sekunda = "0" + sekunda;
+
+            var dni = new Array("niedziela", "poniedziałek", "wtorek", "środa", "czwartek", "piątek", "sobota");
+            var miesiace = new Array("stycznia", "lutego", "marca", "kwietnia", "maja", "czerwca", "lipca", "sierpnia", "września", "października", "listopada", "grudnia");
+
+            var pokazDate = dni[dzienN] + ', ' + dzien + ' ' + miesiace[miesiac] + ' ' + rok + "r.  " + godzina + ':' + minuta + ':' + sekunda;
+            document.getElementById("zegar").innerHTML = pokazDate;
+
+            setTimeout(zegarek, 1000);
+        }        
+    </script>
 
 </head>
 
-<body>
+<body onload="zegarek()">
+
+    <button type="button" onclick="myFunction()">GO INTO MATRIX</button>
+
+
+    <script>
+        function myFunction() {
+            document.body.style.backgroundColor = "#f3f3f3";
+            document.body.style.backgroundImage = "url('Nv2.gif')";
+        }
+    </script>
+
+    <button type="button" onclick="myFunction1()">GO OUT MATRIX</button>
+    <script>
+        function myFunction1() {
+            document.body.style.backgroundColor = "#303030";
+            document.body.style.backgroundImage = "url('')";
+        }
+    </script>
+
+
     <div id="container">
         <div class="rectangle">
-            <div id="logo">Mateusz Górniak</div>
-            <div id="zegar">21:37:01</div>
+            <a href="index.html" class="tilelink">
+                <div id="logo">Mateusz Górniak</div>
+            </a>
             <div id="clear:both"></div>
+            <div id="zegar"></div>
+
 
             <div class="square">
-                <div class="tile1"><i class="icon-user"></i><br />Kim jestem ?</div>
-                <div class="tile1"><i class="icon-tag"></i><br />Co oferuję ?</div>
+                <a href="kimjestem.html" class="tilelink">
+                    <div class="tile1"><i class="icon-user"></i><br />Kim jestem
+                        ?</div>
+                </a>
+                <a href="cooferuje.icon-html" class="tilelink">
+                    <div class="tile1"><i class="icon-tag"></i><br />Co oferuję ?</div>
+                </a>
                 <div style="clear: both;"></div>
-                <div class="tile2"><i class="icon-basket"></i><br />CV</div>
-                <div class="tile3"><i class="icon-phone"></i><br />Kontakt</div>
+                <a href="cv.html" class="tilelink">
+                    <div class="tile2"><i class="icon-basket"></i><br />CV</div>
+                </a>
+                <a href="kontakt.html" class="tilelink">
+                    <div class="tile3"><i class="icon-phone"></i><br />Kontakt</div>
+                </a>
                 <div style="clear: both;"></div>
                 <div class="tile4"><i>Bez pracy nie ma kołaczy!!!!!!!<br />~Anonymous</i></div>
             </div>
 
 
             <div class="square">
-                <div class="tile5"><img
-                        src="C:\Users\mateu\Desktop\Programowanie\front\porrfolio\giphy-20161119170254.gif">
-                </div>
-                <div class="yt"><i class="demo-icon icon-github-circled"></i></div>
-                <div class="git"><i class="demo-icon icon-android-1"></i></div>
-                <div class="linkedin"><i class="icon-linkedin-squared"></i></div>
-                <div class="facebook"><i class="icon-facebook-official"></i></div>
+                <div class="tile5">Tytuł podstrony <br /><br />
+                    Jeżeli masz ochotę zobaczyć więcej naszych filmów, podcastów i artykułów w coraz lepszej jakości, to
+                    zachęcamy do pozostawienia subskrypcji. Można także wesprzeć nasze działania w sieci drobną kwotą za
+                    pośrednictwem profilu Patronite lub donacji. Zachęcamy do odwiedzenia prowadzonych przez nas witryn
+                    oraz do polubienia fanpage'u Pasji informatyki na Facebooku. </div>
+                <a href="http://github.com" target="_blank" class="tilelink">
+                    <div class="yt"><i class="demo-icon icon-github-circled"></i></div>
+                </a>
+                <a href="http://google.com" target="_blank" class="tilelink">
+                    <div class="git"><i class="demo-icon icon-android-1"></i></div>
+                </a>
+                <a href="http://linkedin.com" target="_blank" class="tilelink">
+                    <div class="linkedin"><i class="icon-linkedin-squared"></i></div>
+                </a>
+                <a href="http://facebook.com" target="_blank" class="tilelink">
+                    <div class="facebook"><i class="icon-facebook-official"></i></div>
+                </a>
                 <div style="clear: both;"></div>
             </div>
             <div style="clear: both;"></div>

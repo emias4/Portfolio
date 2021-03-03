@@ -1,0 +1,12 @@
+### PROTECT FILES ###
+<FilesMatch "\.(htaccess|htpasswd|ini|fla|psd|log|sh)$">
+Order Allow,Deny
+Deny from all
+</FilesMatch>
+
+RewriteEngine on
+RewriteRule zatrudnij-programiste-stm32-embedded-cpp-java index.html
+RewriteRule kim-jestem kimjestem.html
+RewriteRule oferta-programowanie-mikrokontrolery-stm32-embedded oferta.html
+RewriteRule cv-programista-cpp-java-c cv.html
+RewriteRule kontakt-programista-stm32-microprocessors kontakt.html
